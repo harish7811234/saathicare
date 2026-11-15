@@ -1,0 +1,59 @@
+name: Bug Report
+description: Create a report to help us improve SaathiCare
+title: "[BUG]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: Active Demo Role
+      description: Which simulated persona were you using when the issue occurred?
+      options:
+        - Elderly (Meera Patel)
+        - Family Member (Aarav Patel)
+        - Caretaker (Priya Shah)
+        - Not Applicable / Landing Page
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this bug step by step?
+      placeholder: |
+        1. Open SaathiCare
+        2. Go to '...'
+        3. Click on '....'
+        4. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen instead?
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser & Environment
+      options:
+        - Chrome / Chromium
+        - Safari
+        - Firefox
+        - Edge
+        - Mobile Browser (iOS Safari / Android Chrome)
+    validations:
+      required: true
