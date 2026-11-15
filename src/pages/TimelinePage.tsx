@@ -6,8 +6,6 @@ import {
   Users2,
   AlertTriangle,
   HeartPulse,
-  Filter,
-  CheckCircle2,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { ActivityLog } from '../types';

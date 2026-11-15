@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CalendarDays, Clock, MapPin, User, Phone, FileText } from 'lucide-react';
+import { X, CalendarDays } from 'lucide-react';
 import { Appointment } from '../../types';
 import { appointmentService } from '../../services/appointmentService';
 import { useApp } from '../../context/AppContext';
@@ -23,7 +23,7 @@ export const AddAppointmentModal: React.FC<AddAppointmentModalProps> = ({
   );
   const [hospital, setHospital] = useState(appointmentToEdit?.hospital || '');
   const [date, setDate] = useState(
-    appointmentToEdit?.date || new Date().toISOString().split('T')[0]
+    () => appointmentToEdit?.date || new Date().toISOString().split('T')[0]
   );
   const [time, setTime] = useState(appointmentToEdit?.time || '10:00 AM');
   const [purpose, setPurpose] = useState(appointmentToEdit?.purpose || '');

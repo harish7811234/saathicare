@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 import {
-  HeartPulse,
   Activity,
-  AlertCircle,
   Phone,
   MapPin,
-  Calendar,
-  ShieldCheck,
   Edit2,
-  Check,
-  Sparkles,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { profileService } from '../services/profileService';

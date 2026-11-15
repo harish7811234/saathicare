@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { MedicationDoseCard } from '../medications/MedicationDoseCard';
 import { AppProvider } from '../../context/AppContext';
 import { MedicationDose } from '../../types';

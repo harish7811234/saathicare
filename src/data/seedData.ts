@@ -45,6 +45,10 @@ export const initialMedications: Medication[] = [
     status: 'active',
     prescribedBy: 'Dr. Rajesh Sharma',
     colorTag: 'sage',
+    remainingPills: 18,
+    totalPills: 30,
+    precautions: ['Take with full glass of water', 'Monitor morning BP'],
+    interactions: ['Potassium supplements'],
   },
   {
     id: 'med-02',
@@ -59,6 +63,10 @@ export const initialMedications: Medication[] = [
     status: 'active',
     prescribedBy: 'Dr. Anita Desai',
     colorTag: 'peach',
+    remainingPills: 8,
+    totalPills: 30,
+    precautions: ['Take with food to avoid stomach upset', 'Do not crush extended-release tablet'],
+    interactions: ['Alcohol'],
   },
   {
     id: 'med-03',
@@ -73,6 +81,10 @@ export const initialMedications: Medication[] = [
     status: 'active',
     prescribedBy: 'Dr. Vikram Mehta',
     colorTag: 'yellow',
+    remainingPills: 22,
+    totalPills: 30,
+    precautions: ['Take after afternoon meal', 'Avoid taking with iron within 2 hrs'],
+    interactions: ['Iron supplements', 'Thyroid medication'],
   },
   {
     id: 'med-04',
@@ -87,6 +99,10 @@ export const initialMedications: Medication[] = [
     status: 'active',
     prescribedBy: 'Dr. Rajesh Sharma',
     colorTag: 'lavender',
+    remainingPills: 14,
+    totalPills: 30,
+    precautions: ['Take at bedtime', 'Avoid grapefruit juice'],
+    interactions: ['Grapefruit juice', 'Antacids'],
   },
 ];
 
@@ -115,6 +131,8 @@ export function generateInitialDoses(): MedicationDose[] {
     actionTimestamp: '08:35 AM',
     actionBy: 'Meera Patel',
     colorTag: 'sage',
+    remainingPills: 18,
+    precautions: ['Take with full glass of water'],
   });
 
   doses.push({
@@ -128,6 +146,8 @@ export function generateInitialDoses(): MedicationDose[] {
     scheduledTime: '09:00 AM',
     status: 'upcoming',
     colorTag: 'peach',
+    remainingPills: 8,
+    precautions: ['Take with morning meal to prevent gastric upset'],
   });
 
   doses.push({
@@ -141,6 +161,8 @@ export function generateInitialDoses(): MedicationDose[] {
     scheduledTime: '01:30 PM',
     status: 'upcoming',
     colorTag: 'yellow',
+    remainingPills: 22,
+    precautions: ['Take after afternoon meal'],
   });
 
   doses.push({
@@ -154,6 +176,8 @@ export function generateInitialDoses(): MedicationDose[] {
     scheduledTime: '09:00 PM',
     status: 'upcoming',
     colorTag: 'lavender',
+    remainingPills: 14,
+    precautions: ['Take before bedtime'],
   });
 
   // Past 6 days history for realistic adherence chart

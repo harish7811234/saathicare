@@ -71,6 +71,10 @@ export interface Medication {
   status: 'active' | 'completed' | 'paused';
   prescribedBy: string;
   colorTag: 'sage' | 'peach' | 'lavender' | 'yellow';
+  remainingPills?: number;
+  totalPills?: number;
+  precautions?: string[];
+  interactions?: string[];
 }
 
 export type DoseStatus = 'upcoming' | 'taken' | 'skipped' | 'missed' | 'unconfirmed';
@@ -89,6 +93,8 @@ export interface MedicationDose {
   actionBy?: string;
   notes?: string;
   colorTag: 'sage' | 'peach' | 'lavender' | 'yellow';
+  remainingPills?: number;
+  precautions?: string[];
 }
 
 export interface Appointment {

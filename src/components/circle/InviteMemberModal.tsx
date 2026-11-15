@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Users, Key, Copy, Check, ShieldAlert, Sparkles, UserPlus } from 'lucide-react';
+import { X, Users, Key, Copy, Check, ShieldAlert } from 'lucide-react';
 import { Role } from '../../types';
 import { careCircleService } from '../../services/careCircleService';
 import { useApp } from '../../context/AppContext';

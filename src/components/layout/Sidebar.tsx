@@ -11,7 +11,6 @@ import {
   Settings,
   Sparkles,
   ArrowRight,
-  ShieldCheck,
 } from 'lucide-react';
 import { useApp, AppPage } from '../../context/AppContext';
 

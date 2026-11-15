@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
 import {
-  Users2,
   UserPlus,
   Key,
-  ShieldCheck,
   Phone,
-  Mail,
-  Heart,
-  Sparkles,
-  Calendar,
   Trash2,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';

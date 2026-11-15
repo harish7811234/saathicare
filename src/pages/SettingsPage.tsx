@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
 import {
-  Settings as SettingsIcon,
   RotateCcw,
   Sliders,
-  Bell,
-  Eye,
   Database,
-  ShieldCheck,
-  Check,
-  Clock,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { storageService } from '../services/storageService';

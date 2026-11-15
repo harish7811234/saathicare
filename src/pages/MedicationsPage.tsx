@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 import {
-  Pill,
   Plus,
-  Clock,
   Filter,
   Search,
-  CheckCircle2,
-  Calendar,
   History,
-  AlertTriangle,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { medicationService } from '../services/medicationService';
-import { Medication, TimeOfDay } from '../types';
+import { Medication } from '../types';
 import { MedicationCard } from '../components/medications/MedicationCard';
 import { MedicationDoseCard } from '../components/medications/MedicationDoseCard';
 import { AddMedicationModal } from '../components/medications/AddMedicationModal';

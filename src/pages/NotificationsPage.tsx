@@ -2,21 +2,16 @@ import React, { useState } from 'react';
 import {
   Bell,
   AlertTriangle,
-  CheckCircle2,
   Clock,
-  Sparkles,
   Users2,
   Calendar,
-  Filter,
-  Check,
-  RotateCcw,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { notificationService } from '../services/notificationService';
 import { NotificationCategory } from '../types';
 
 export const NotificationsPage: React.FC = () => {
-  const { data, role, simulateMissedDose, isSimulating, showToast } = useApp();
+  const { data, simulateMissedDose, isSimulating, showToast } = useApp();
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
 
   const notifications = data.notifications || [];

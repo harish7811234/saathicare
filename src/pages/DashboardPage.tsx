@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
 import {
-  Heart,
   Pill,
   CalendarDays,
   LineChart as ChartIcon,
   CheckCircle2,
-  AlertCircle,
   Clock,
   Sparkles,
   ArrowRight,
   ShieldCheck,
   UserCheck,
   Plus,
-  Bell,
-  Activity,
 } from 'lucide-react';
 import {
   ResponsiveContainer,

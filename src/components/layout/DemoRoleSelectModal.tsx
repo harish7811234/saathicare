@@ -1,6 +1,6 @@
 import React from 'react';
-import { X, UserCheck, ShieldCheck, ArrowRight } from 'lucide-react';
-import { useApp, DEMO_USERS } from '../../context/AppContext';
+import { X, ArrowRight } from 'lucide-react';
+import { useApp } from '../../context/AppContext';
 import { Role } from '../../types';
 
 export const DemoRoleSelectModal: React.FC<{

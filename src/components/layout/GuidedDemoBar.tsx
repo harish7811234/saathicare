@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  Compass,
-  ArrowRight,
-  CheckCircle2,
-  X,
-  Play,
-  RotateCcw,
-  Sparkles,
-  ChevronRight,
-} from 'lucide-react';
+import { RotateCcw, X, ChevronRight } from 'lucide-react';
 import { useApp, AppPage } from '../../context/AppContext';
 import { Role } from '../../types';
 

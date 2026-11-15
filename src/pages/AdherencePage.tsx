@@ -1,13 +1,9 @@
 import React from 'react';
 import {
-  LineChart as LineChartIcon,
   CheckCircle2,
   AlertTriangle,
   Clock,
   Sparkles,
-  TrendingUp,
-  ShieldCheck,
-  Calendar,
   Award,
 } from 'lucide-react';
 import {
@@ -21,11 +17,9 @@ import {
   PieChart,
   Pie,
 } from 'recharts';
-import { useApp } from '../context/AppContext';
 import { medicationService } from '../services/medicationService';
 
 export const AdherencePage: React.FC = () => {
-  const { data } = useApp();
   const metrics = medicationService.getAdherenceMetrics();
 
   // Pie chart distribution

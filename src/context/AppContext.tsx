@@ -1,5 +1,8 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { Role, User, StorageData, MedicationDose, Medication, Appointment } from '../types';
+import { Role, User, StorageData } from '../types';
+import { DEMO_USERS } from '../data/demoUsers';
+export { DEMO_USERS };
 import { storageService } from '../services/storageService';
 import { medicationService } from '../services/medicationService';
 import { notificationService } from '../services/notificationService';
@@ -16,36 +19,6 @@ export type AppPage =
   | 'notifications'
   | 'timeline'
   | 'settings';
-
-export const DEMO_USERS: Record<Role, User> = {
-  elderly: {
-    id: 'user-meera',
-    name: 'Meera Patel',
-    role: 'elderly',
-    email: 'meera.patel@saathicare.demo',
-    avatar: '👵',
-    relation: 'Care Recipient (72 yrs)',
-    phone: '+91 98450 99887',
-  },
-  family: {
-    id: 'user-aarav',
-    name: 'Aarav Patel',
-    role: 'family',
-    email: 'aarav.patel@techinnovate.com',
-    avatar: '👨‍💼',
-    relation: 'Son & Primary Guardian',
-    phone: '+91 98450 12345',
-  },
-  caretaker: {
-    id: 'user-priya',
-    name: 'Priya Shah',
-    role: 'caretaker',
-    email: 'priya.shah@caregiversplus.in',
-    avatar: '👩‍⚕️',
-    relation: 'Certified Geriatric Caretaker',
-    phone: '+91 97310 56789',
-  },
-};
 
 interface AppContextType {
   role: Role;
@@ -134,7 +107,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
           origin: { y: 0.8 },
           colors: ['#789B7D', '#E6F1E8', '#FCE8D8', '#F5E9B9'],
         });
-      } catch (e) {
+      } catch {
         // ignore confetti errors in unsupported environments
       }
       showToast(`Great job! Marked ${updated?.medicationName || 'dose'} as taken.`, 'success');

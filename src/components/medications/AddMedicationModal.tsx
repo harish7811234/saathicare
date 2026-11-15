@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Pill, Clock, Calendar, AlertCircle } from 'lucide-react';
+import { X, Pill } from 'lucide-react';
 import { Medication, TimeOfDay } from '../../types';
 import { medicationService } from '../../services/medicationService';
 import { useApp } from '../../context/AppContext';
@@ -22,7 +22,7 @@ export const AddMedicationModal: React.FC<AddMedicationModalProps> = ({
   const [frequency, setFrequency] = useState(medicationToEdit?.frequency || 'Once daily');
   const [reminderTime, setReminderTime] = useState(medicationToEdit?.reminderTimes[0] || '08:30 AM');
   const [startDate, setStartDate] = useState(
-    medicationToEdit?.startDate || new Date().toISOString().split('T')[0]
+    () => medicationToEdit?.startDate || new Date().toISOString().split('T')[0]
   );
   const [instructions, setInstructions] = useState(medicationToEdit?.instructions || '');
   const [purpose, setPurpose] = useState(medicationToEdit?.purpose || '');

@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import {
-  CalendarDays,
   Plus,
-  Clock,
-  MapPin,
-  CheckCircle2,
-  Calendar,
-  Filter,
   Search,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
@@ -16,7 +10,7 @@ import { AppointmentCard } from '../components/appointments/AppointmentCard';
 import { AddAppointmentModal } from '../components/appointments/AddAppointmentModal';
 
 export const AppointmentsPage: React.FC = () => {
-  const { role, data } = useApp();
+  const { role } = useApp();
   const [tab, setTab] = useState<'upcoming' | 'past'>('upcoming');
   const [search, setSearch] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);

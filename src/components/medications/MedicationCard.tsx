@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pill, Clock, Edit2, Trash2, Calendar, FileText, AlertCircle } from 'lucide-react';
+import { Clock, Edit2, Trash2, Calendar, Package, AlertTriangle } from 'lucide-react';
 import { Medication } from '../../types';
 import { medicationService } from '../../services/medicationService';
 import { useApp } from '../../context/AppContext';
@@ -34,6 +34,7 @@ export const MedicationCard: React.FC<{
               className={`w-9 h-9 rounded-xl flex items-center justify-center font-bold text-sm border ${
                 colorTagStyles[medication.colorTag || 'sage']
               }`}
+              aria-hidden="true"
             >
               💊
             </div>
@@ -68,6 +69,14 @@ export const MedicationCard: React.FC<{
           {medication.instructions}
         </p>
 
+        {/* Precautions badge if available */}
+        {medication.precautions && medication.precautions.length > 0 && (
+          <div className="mb-3 flex items-center gap-1.5 text-[11px] text-amber-800 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200">
+            <AlertTriangle className="w-3.5 h-3.5 shrink-0 text-amber-600" />
+            <span>{medication.precautions[0]}</span>
+          </div>
+        )}
+
         {/* Meta info */}
         <div className="space-y-1 text-[11px] text-[#77786F] border-t border-[#EAE9E2] pt-3">
           <div className="flex items-center justify-between">
@@ -87,6 +96,18 @@ export const MedicationCard: React.FC<{
               {medication.prescribedBy}
             </span>
           </div>
+
+          {typeof medication.remainingPills === 'number' && (
+            <div className="flex items-center justify-between pt-1">
+              <span className="flex items-center gap-1">
+                <Package className="w-3 h-3 text-amber-600" /> Inventory / Supply:
+              </span>
+              <span className={`font-semibold ${medication.remainingPills <= 10 ? 'text-amber-700' : 'text-[#30352F]'}`}>
+                {medication.remainingPills} / {medication.totalPills || 30} pills
+                {medication.remainingPills <= 10 && ' (Low Supply)'}
+              </span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -95,17 +116,17 @@ export const MedicationCard: React.FC<{
         <div className="mt-4 pt-3 border-t border-[#EAE9E2] flex items-center justify-end gap-2">
           <button
             onClick={() => onEdit(medication)}
-            className="flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-lg text-[#77786F] hover:text-[#30352F] hover:bg-[#FAF8F2] transition-colors"
+            className="flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-lg text-[#77786F] hover:text-[#30352F] hover:bg-[#FAF8F2] transition-colors cursor-pointer"
           >
             <Edit2 className="w-3 h-3" />
             <span>Edit</span>
           </button>
           <button
             onClick={handleDelete}
-            className="flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-lg text-[#D95C5C] hover:bg-[#FFF0F0] transition-colors"
+            className="flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-lg text-red-600 hover:bg-red-50 transition-colors cursor-pointer"
           >
             <Trash2 className="w-3 h-3" />
-            <span>Remove</span>
+            <span>Delete</span>
           </button>
         </div>
       )}

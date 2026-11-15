@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Clock, MapPin, Phone, UserCheck, AlertCircle, Edit2, XCircle, Trash2 } from 'lucide-react';
+import { Clock, MapPin, Phone, UserCheck, Edit2, XCircle, Trash2 } from 'lucide-react';
 import { Appointment } from '../../types';
 import { appointmentService } from '../../services/appointmentService';
 import { useApp } from '../../context/AppContext';

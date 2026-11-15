@@ -2,15 +2,10 @@ import React from 'react';
 import {
   Sparkles,
   ArrowRight,
-  ShieldCheck,
-  Heart,
   Pill,
-  Users2,
   BellRing,
   CalendarCheck,
   CheckCircle2,
-  Clock,
-  Compass,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { Role } from '../types';

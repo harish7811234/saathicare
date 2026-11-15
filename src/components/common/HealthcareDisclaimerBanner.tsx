@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AlertCircle, X, ShieldAlert } from 'lucide-react';
+import { X, ShieldAlert } from 'lucide-react';
 
 export const HealthcareDisclaimerBanner: React.FC = () => {
   const [dismissed, setDismissed] = useState(false);
